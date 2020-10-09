@@ -1,0 +1,108 @@
+
+// To view the default settings, hold "alt" while clicking on the "Settings" button.
+// For documentation on these settings, see: https://aka.ms/terminal-documentation
+
+// https://docs.microsoft.com/en-us/windows/terminal/
+
+{
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+
+    "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+    "initialCols": 80,
+    "initialRows": 25,
+    "alwaysShowTabs": true,
+    "confirmCloseAllTabs": true,
+    "launchMode": "default",
+    "alwaysOnTop": false,
+    "showTabsInTitlebar": true,
+    "showTerminalTitleInTitlebar": true,
+    "theme": "dark",
+    "copyOnSelect": false,
+    "copyFormatting": true,
+    "tabWidthMode": "titleLength",
+    "snapToGridOnResize": false,
+
+    "profiles":
+    {
+        "defaults":
+        {
+            "startingDirectory": ".",
+            "colorScheme": "One Half Dark",
+            // "colorScheme": "Frost",
+            "fontFace": "Cascadia Mono",
+            "fontSize": 12,
+            "padding": "8, 8, 8, 8",
+            "antialiasingMode": "cleartype",
+            "cursorShape": "vintage",
+            "cursorColor": "#FFFFFF",
+            "hidden": false,
+            "useAcrylic": true,
+            "acrylicOpacity": 0.85,
+            "snapOnInput": true,
+            "historySize": 9001,
+            "closeOnExit": "graceful"
+        },
+        "list":
+        [
+            {
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "name": "PowerShell",
+                "commandline": "powershell.exe"
+            },
+            {
+                "guid": "{72bf6a7b-04ab-4a0c-b334-655cac13e0c8}",
+                "name": "MSYS2",
+                "commandline": "C:/msys64/msys2_shell.cmd -use-full-path -defterm -no-start -mingw64 -where .",
+                "icon": "C:/msys64/msys2.ico",
+                "suppressApplicationTitle": true
+            },
+            {
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "name": "CMD",
+                "commandline": "cmd.exe"
+            },
+            {
+                "guid": "{2ac7ebfa-df93-48c8-ad34-b48114400032}",
+                "name": "VS CMD",
+                "commandline": "cmd.exe /k \"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\Common7\\Tools\\VsDevCmd.bat\"",
+                "icon": "ms-appx:///ProfileIcons/{0caa0dad-35be-5f56-a8ff-afceeeaa6101}.png"
+            },
+            {
+                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+                "name": "Azure Cloud Shell",
+                "source": "Windows.Terminal.Azure",
+                "hidden": true
+            }
+        ]
+    },
+
+    // Add custom color schemes to this array
+    "schemes": 
+    [
+        {
+            "name" : "Frost",
+            "background" : "#FFFFFF",
+            "black" : "#3C5712",
+            "blue" : "#17b2ff",
+            "brightBlack" : "#749B36",
+            "brightBlue" : "#27B2F6",
+            "brightCyan" : "#13A8C0",
+            "brightGreen" : "#89AF50",
+            "brightPurple" : "#F2A20A",
+            "brightRed" : "#F49B36",
+            "brightWhite" : "#741274",
+            "brightYellow" : "#991070",
+            "cyan" : "#3C96A6",
+            "foreground" : "#000000",
+            "green" : "#6AAE08",
+            "purple" : "#991070",
+            "red" : "#8D0C0C",
+            "white" : "#6E386E",
+            "yellow" : "#991070"
+        }
+    ],
+
+    // Add any keybinding overrides to this array.
+    // To unbind a default keybinding, set the command to "unbound"
+    "keybindings": []
+}
