@@ -1,15 +1,9 @@
-
-// To view the default settings, hold "alt" while clicking on the "Settings" button.
-// For documentation on these settings, see: https://aka.ms/terminal-documentation
-
-// https://docs.microsoft.com/en-us/windows/terminal/
-
 {
     "$schema": "https://aka.ms/terminal-profiles-schema",
 
     "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
-    "initialCols": 80,
-    "initialRows": 25,
+    "initialCols": 120,
+    "initialRows": 30,
     "alwaysShowTabs": true,
     "confirmCloseAllTabs": true,
     "launchMode": "default",
@@ -28,8 +22,7 @@
         {
             "startingDirectory": ".",
             "colorScheme": "One Half Dark",
-            // "colorScheme": "Frost",
-            "fontFace": "Cascadia Mono",
+            "fontFace": "mononoki NF",
             "fontSize": 12,
             "padding": "8, 8, 8, 8",
             "antialiasingMode": "cleartype",
@@ -76,7 +69,6 @@
         ]
     },
 
-    // Add custom color schemes to this array
     "schemes": 
     [
         {
@@ -102,7 +94,5 @@
         }
     ],
 
-    // Add any keybinding overrides to this array.
-    // To unbind a default keybinding, set the command to "unbound"
     "keybindings": []
 }
