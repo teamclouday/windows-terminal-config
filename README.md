@@ -15,15 +15,22 @@ Steps:
 2. Copy `.oh-my-posh.omp.json` and put it under home (`~`) directory  
 3. Run Commands
    ```powershell
-    Install-Module posh-git -Scope CurrentUser  
-    Install-Module oh-my-posh -Scope CurrentUser
-    notepad $PROFILE
+   Install-Module posh-git -Scope CurrentUser  
+   Install-Module oh-my-posh -Scope CurrentUser
+   notepad $PROFILE
    ```  
-4. In notepad, add the following lines  
+   Or if you have [vscode](https://code.visualstudio.com/) installed, the last command can be:
    ```powershell
-    Import-Module posh-git
-    Import-Module oh-my-posh
-    Set-PoshPrompt -Theme ~/.oh-my-posh.omp.json
+   code $PROFILE
+   ```
+4. In notepad(or vscode), add the following lines  
+   ```powershell
+   Import-Module posh-git
+   Import-Module oh-my-posh
+   Set-PoshPrompt -Theme ~/.oh-my-posh.omp.json
+   
+   Set-PSReadLineOption -Colors @{Operator="Gray"}
+   Set-PSReadLineOption -Colors @{Parameter="Magenta"}
    ```
 
 May also need to modify powershell execution policy:  
