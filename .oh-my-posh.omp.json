@@ -6,8 +6,7 @@
             "segments": [
                 {
                     "type": "session",
-                    "style": "diamond",
-                    "invert_powerline": false,
+                    "style": "powerline",
                     "foreground": "#c386f1",
                     "background": "#282c34",
                     "template": " 😉 teamclouday"
@@ -23,7 +22,6 @@
                 {
                     "background": "#282c34",
                     "foreground": "#3A86FF",
-                    "leading_diamond": " ",
                     "style": "diamond",
                     "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
                     "type": "os"
