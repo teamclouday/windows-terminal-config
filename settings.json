@@ -11,14 +11,17 @@
     "initialCols": 120,
     "initialRows": 30,
     "launchMode": "default",
-    "profiles": {
-        "defaults": {
+    "profiles": 
+    {
+        "defaults": 
+        {
             "antialiasingMode": "cleartype",
             "closeOnExit": "graceful",
             "colorScheme": "One Half Dark",
             "cursorColor": "#FFFFFF",
             "cursorShape": "vintage",
-            "font": {
+            "font": 
+            {
                 "face": "mononoki NF",
                 "size": 12
             },
@@ -30,7 +33,8 @@
             "startingDirectory": ".",
             "useAcrylic": true
         },
-        "list": [
+        "list": 
+        [
             {
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "name": "PowerShell",
@@ -64,10 +68,17 @@
                 "hidden": false,
                 "name": "Developer PowerShell for VS 2022",
                 "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+                "hidden": false,
+                "name": "Ubuntu",
+                "source": "Windows.Terminal.Wsl"
             }
         ]
     },
-    "schemes": [
+    "schemes": 
+    [
         {
             "background": "#0C0C0C",
             "black": "#0C0C0C",
