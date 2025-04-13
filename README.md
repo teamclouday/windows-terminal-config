@@ -28,12 +28,25 @@ Steps:
    ```powershell
    code $PROFILE
    ```
+5. Setup autocomplete
+   ```
+   Install-Module PSReadLine -RequiredVersion 2.1.0
+   ```
 5. In notepad(or vscode), add the following lines  
    ```powershell
    oh-my-posh init pwsh --config "~/.oh-my-posh.omp.json" | Invoke-Expression
 
+   Import-Module PSReadLine
+
+   Set-PSReadLineOption -PredictionSource History
+
+   Set-PSReadLineOption -HistorySearchCursorMovesToEnd
+   Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
+   Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
+
    Set-PSReadLineOption -Colors @{Operator="Gray"}
    Set-PSReadLineOption -Colors @{Parameter="Magenta"}
+   Set-PSReadLineOption -Colors @{InlinePrediction="#707070"}
    ```
 
 May also need to modify powershell execution policy:  
