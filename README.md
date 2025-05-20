@@ -38,8 +38,14 @@ Steps:
 
    Import-Module PSReadLine
 
-   Set-PSReadLineOption -PredictionSource History
+   # Only add the line to history (and therefore to predictions)
+   # when its length is 100 characters or less
+   Set-PSReadLineOption -AddToHistoryHandler {
+       param([string]$line)
+       return ($line.Length -le 100)   # $true = keep, $false = skip
+   }
 
+   Set-PSReadLineOption -PredictionSource History
    Set-PSReadLineOption -HistorySearchCursorMovesToEnd
    Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
    Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
