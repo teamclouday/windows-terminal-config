@@ -1,0 +1,60 @@
+oh-my-posh init pwsh --config "~/.oh-my-posh.omp.json" | Invoke-Expression
+
+Import-Module PSReadLine
+
+# Only add the line to history (and therefore to predictions)
+# when its length is 1000 characters or less
+Set-PSReadLineOption -AddToHistoryHandler {
+    param([string]$line)
+
+    if ($line.Length -gt 1000) {
+        return $false
+    }
+
+    if ($line -match '(^|\s)urlencode(\s|$)') {
+        return $false
+    }
+
+    if ($line -match '(^|\s)urldecode(\s|$)') {
+        return $false
+    }
+
+    return $true
+}
+
+Set-PSReadLineOption -PredictionSource History
+Set-PSReadLineOption -HistorySearchCursorMovesToEnd
+Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
+Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
+
+Set-PSReadLineOption -Colors @{Operator="Gray"}
+Set-PSReadLineOption -Colors @{Parameter="Magenta"}
+Set-PSReadLineOption -Colors @{InlinePrediction="#707070"}
+
+function urlencode {
+    param([string]$s)
+    [System.Uri]::EscapeDataString($s)
+}
+
+function urldecode {
+    param([string]$s)
+    [System.Uri]::UnescapeDataString($s)
+}
+
+function Convert-ToWebP {
+    param([string]$File)
+
+    $inputFile = Get-Item -LiteralPath $File
+
+    if ($inputFile.Extension -ieq ".webp") {
+        Write-Host "Skipping already optimized image: $inputFile"
+        return
+    }
+
+    $hash = (Get-FileHash -LiteralPath $inputFile -Algorithm MD5).Hash.Substring(0, 8).ToLowerInvariant()
+    $outputFile = Join-Path $inputFile.Directory "$($inputFile.BaseName)-$hash.webp"
+
+    ffmpeg -y -i $inputFile -c:v libwebp -quality 100 $outputFile
+}
+
+Invoke-Expression (&task --completion powershell | Out-String)
